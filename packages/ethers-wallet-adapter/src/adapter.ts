@@ -40,7 +40,7 @@ export const adaptEthersSigner = (signer: Signer): ReservoirWallet => {
       const transaction = await signer.sendTransaction({
         ...stepData,
         ...(gas && {
-          gasLimit: gas,
+          gasPrice: gas,
         }),
       })
       return transaction.hash as `0x${string}`
